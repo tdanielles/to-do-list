@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="logo-area">
+        <div class="hidden-menu">
+            <span class="material-icons-round">menu</span>
+        </div>
+        <div class="title-area">
+            <div class="text-area">do.<span>me</span></div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="left-panel" id="leftPanel">
+            <div class="home">
+                <h2>Home</h2>
+                <div class="tile selected" id="allTasks">
+                    <img src="images/all-tasks.png"> 
+                    <div data-name>All Tasks</div>
+                </div>
+                <div class="tile" id="today">
+                    <img src="images/today.png"> 
+                    <div data-name>Today</div>
+                </div>
+                <div class="tile" id="thisWeek">
+                    <img src="images/week.png">
+                    <div data-name>Next 7 Days</div>
+                </div>
+                <div class="tile" id="important">
+                    <img src="images/star.png">
+                    <div data-name>Important</div>
+                </div>
+            </div>
+            <div class="project">
+                <h2>Projects</h2>
+                <form id="projectForm" class="hidden" autocomplete="off">
+                    <div class="project-icon">
+                        <span class="material-icons-round">menu</span>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="projectInput" placeholder="Enter project name" maxlength="24">
+                        <div class="form-buttons">
+                            <input type="submit" id="projectSubmitBtn" class="project-submit-btn" value="Add">
+                            <input type="button" id="projectCancelBtn" class="project-cancel-btn" value="Cancel">
+                        </div>
+                    </div>
+                </form>
+                <button id="addProject"><span class="material-icons-round">add_circle_outlined</span>Add Project</button>
+                
+                <div class="option hidden" id="projectOption">
+                    <button>Rename</button>
+                    <button>Delete</button>
+                </div>
+                
+                <form id="renameForm" class="hidden" autocomplete="off">
+                    <div class="project-icon">
+                        <span class="material-icons-round">menu</span> 
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="projectRenameInput" maxlength="24">
+                        <div class="form-buttons">
+                            <input type="submit" class="rename-rename-btn" value="Rename">
+                            <input type="button" class="rename-cancel-btn" value="Cancel">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div id="rightPanel" class="right-panel">
+            <div class="title">All Tasks</div>
+            <div class="list-todo">
+                <ul>
+                </ul>
+
+                <div class="option hidden" id="listOption">
+                    <button id="listEdit">Edit</button>
+                    <button id="listDelete">Delete</button>
+                </div>
+                
+                <form id="editListForm" class="hidden" autocomplete="off">
+                    <div class="input-field">
+                        <label>Title:</label>
+                        <input type="text" id="editListTitle" placeholder="What to do?">
+                        <label>Details(optional):</label>
+                        <textarea type="text" id="editListInputDetail" placeholder="Input task details here" wrap="hard"></textarea>
+                        <label>Date:</label>
+                        <input type="date" id="editListInputDate">
+                        <div class="form-buttons">
+                            <input type="submit" id="editTaskSubmitBtn" class="edit-task-submit-btn" value="Add">
+                            <input type="button" id="editTaskCancelBtn" class="edit-task-cancel-btn" value="Cancel">
+                        </div>
+                    </div>
+                </form>
+                
+                <form id="listForm" class="hidden" autocomplete="off">
+                    <div class="input-field">
+                        <label>Title:</label>
+                        <input type="text" id="listInput" placeholder="What to do?">
+                        <label>Details(optional):</label>
+                        <textarea type="text" id="listInputDetail" placeholder="Input task details here" wrap="hard"></textarea>
+                        <label>Date:</label>
+                        <input type="date" id="listInputDate">
+                        <div class="form-buttons">
+                            <input type="submit" id="listSubmitBtn" class="list-submit-btn" value="Add">
+                            <input type="button" id="listCancelBtn" class="list-cancel-btn" value="Cancel">
+                        </div>
+                    </div>
+                </form>
+                <button id="addList"><span class="material-icons-round">add_circle_outlined</span>Add Task</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
